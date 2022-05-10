@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import copy
 import itertools as it
-import random
+import secrets
 import sys
 from functools import partialmethod, wraps
 from math import ceil
@@ -1167,7 +1167,7 @@ class OpenGLMobject:
         if recurse:
             for submob in self.submobjects:
                 submob.shuffle(recurse=True)
-        random.shuffle(self.submobjects)
+        secrets.SystemRandom().shuffle(self.submobjects)
         self.assemble_family()
         return self
 
