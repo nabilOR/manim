@@ -178,6 +178,21 @@ def get_shader_code_from_file(filename):
     # from other files an inserted into the relevant strings before
     # passing to ctx.program for compiling
     # Replace "#INSERT " lines with relevant code
+    '''
+    ***************** OpenRefactory Warning *****************
+    Possible Regex injection!
+    Path:
+    	File: shader_wrapper.py, Line: 175
+    		result = f.read()
+    		Variable result is assigned a tainted value from an external source.
+    	File: shader_wrapper.py, Line: 181
+    		insertions = re.findall(
+    		        r"^#include ../include/.*\.glsl$",
+    		        result,
+    		        flags=re.MULTILINE,
+    		    )
+    		Tainted information is used in a sink.
+    '''
     insertions = re.findall(
         r"^#include ../include/.*\.glsl$",
         result,
