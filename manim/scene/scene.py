@@ -143,6 +143,7 @@ class Scene:
         # TODO, remove need for foreground mobjects
         self.foreground_mobjects = []
         if self.random_seed is not None:
+            # OpenRefactory Warning: Pseudorandom number generators should be avoided.
             random.seed(self.random_seed)
             np.random.seed(self.random_seed)
 
