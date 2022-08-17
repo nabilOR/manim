@@ -7,7 +7,7 @@ __all__ = ["Mobject", "Group", "override_animate"]
 import copy
 import itertools as it
 import operator as op
-import random
+import secrets
 import sys
 import types
 import warnings
@@ -2395,7 +2395,7 @@ class Mobject:
         if recursive:
             for submob in self.submobjects:
                 submob.shuffle(recursive=True)
-        random.shuffle(self.submobjects)
+        secrets.SystemRandom().shuffle(self.submobjects)
 
     def invert(self, recursive=False):
         """Inverts the list of :attr:`submobjects`.
