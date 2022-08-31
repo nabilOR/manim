@@ -27,6 +27,20 @@ def get_module(file_name: Path):
             code = "from manim import *\n" + code
         logger.info("Rendering animation from typed code...")
         try:
+            '''
+            ***************** OpenRefactory Warning *****************
+            Possible Dynamic Code Execution!
+            Path:
+            	File: module_ops.py, Line: 22
+            		code = sys.stdin.read()
+            		Variable code is assigned a tainted value from an external source.
+            	File: module_ops.py, Line: 27
+            		code = "from manim import *\n" + code
+            		Variable code is assigned a tainted value.
+            	File: module_ops.py, Line: 30
+            		exec(code, module.__dict__)
+            		Tainted information is used in a sink.
+            '''
             exec(code, module.__dict__)
             return module
         except Exception as e:
