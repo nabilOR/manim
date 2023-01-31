@@ -27,6 +27,7 @@ from watchdog.observers import Observer
 from .. import config, logger
 from ..animation.animation import Animation, Wait, prepare_animation
 from ..camera.camera import Camera
+# OpenRefactory Warning: Importing every public name using star import should be avoided.
 from ..constants import *
 from ..gui.gui import configure_pygui
 from ..mobject.opengl_mobject import OpenGLPoint
