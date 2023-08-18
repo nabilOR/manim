@@ -11,6 +11,7 @@ import numpy as np
 from colour import Color
 
 from manim import config
+# OpenRefactory Warning: Importing every public name using star import should be avoided.
 from manim.constants import *
 from manim.mobject.geometry.polygram import Rectangle
 from manim.mobject.graphing.coordinate_systems import Axes
